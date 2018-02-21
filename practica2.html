@@ -1,0 +1,524 @@
+﻿
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="imagen.jpg" rel="shortcut icon">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var imagen = 0;
+            var varInfo = 0;
+            var costeMixto = 0.89;
+            var costeAvellana = 1.49;
+            var costePistacho = 2.59;
+            var costeTotal;
+            var cantidad;
+            var kgPistacho = 0;
+            var kgAvellana = 0;
+            var kgMixto = 0;
+            $('#imagen1').click(function () {
+                imagen = 1;
+                if (varInfo == 0) {
+                    $('#botonImagen').css('display', 'inline-block');
+                    $('#botonDescripcion').css('display', 'inline-block');
+                    $('#botonPrecio').css('display', 'inline-block');
+                }
+                if (varInfo == 1) {
+                    $('#divImagen1').css('display', 'inline-block');
+                    $('#divImagen2').css('display', 'none');
+                    $('#divImagen3').css('display', 'none');
+                }
+                if (varInfo == 2) {
+                    $('#divDescripcion1').css('display', 'inline-block');
+                    $('#divDescripcion2').css('display', 'none');
+                    $('#divDescripcion3').css('display', 'none');
+                }
+                if (varInfo == 3) {
+                    $('#divPrecio1').css('display', 'inline-block');
+                    $('#divPrecio2').css('display', 'none');
+                    $('#divPrecio3').css('display', 'none');
+                }
+            });
+            $('#imagen2').click(function () {
+                imagen = 2;
+                if (varInfo == 0) {
+                    $('#botonImagen').css('display', 'inline-block');
+                    $('#botonDescripcion').css('display', 'inline-block');
+                    $('#botonPrecio').css('display', 'inline-block');
+                }
+                if (varInfo == 1) {
+                    $('#divImagen2').css('display', 'inline-block');
+                    $('#divImagen1').css('display', 'none');
+                    $('#divImagen3').css('display', 'none');
+                }
+                if (varInfo == 2) {
+                    $('#divDescripcion2').css('display', 'inline-block');
+                    $('#divDescripcion1').css('display', 'none');
+                    $('#divDescripcion3').css('display', 'none');
+                }
+                if (varInfo == 3) {
+                    $('#divPrecio2').css('display', 'inline-block');
+                    $('#divPrecio1').css('display', 'none');
+                    $('#divPrecio3').css('display', 'none');
+                }
+            });
+            $('#imagen3').click(function () {
+                imagen = 3;
+                if (varInfo == 0) {
+                    $('#botonImagen').css('display', 'inline-block');
+                    $('#botonDescripcion').css('display', 'inline-block');
+                    $('#botonPrecio').css('display', 'inline-block');
+                }
+                if (varInfo == 1) {
+                    $('#divImagen3').css('display', 'inline-block');
+                    $('#divImagen1').css('display', 'none');
+                    $('#divImagen2').css('display', 'none');
+                }
+                if (varInfo == 2) {
+                    $('#divDescripcion3').css('display', 'inline-block');
+                    $('#divDescripcion1').css('display', 'none');
+                    $('#divDescripcion2').css('display', 'none');
+                }
+                if (varInfo == 3) {
+                    $('#divPrecio3').css('display', 'inline-block');
+                    $('#divPrecio1').css('display', 'none');
+                    $('#divPrecio2').css('display', 'none');
+                }
+            });
+            $('#botonImagen').click(function () {
+                varInfo = 1;
+                if (imagen == 1) {
+                    $('#divImagen1').css('display', 'inline-block');
+                    $('#divImagen2').css('display', 'none');
+                    $('#divImagen3').css('display', 'none');
+                }
+                if (imagen == 2) {
+                    $('#divImagen2').css('display', 'inline-block');
+                    $('#divImagen1').css('display', 'none');
+                    $('#divImagen3').css('display', 'none');
+                }
+                if (imagen == 3) {
+                    $('#divImagen3').css('display', 'inline-block');
+                    $('#divImagen1').css('display', 'none');
+                    $('#divImagen2').css('display', 'none');
+                }
+                $('#divDescripcion1').css('display', 'none');
+                $('#divDescripcion2').css('display', 'none');
+                $('#divDescripcion3').css('display', 'none');
+                $('#divPrecio1').css('display', 'none');
+                $('#divPrecio2').css('display', 'none');
+                $('#divPrecio3').css('display', 'none');
+            });
+            $('#botonDescripcion').click(function () {
+                varInfo = 2;
+                if (imagen == 1) {
+                    $('#divDescripcion1').css('display', 'inline-block');
+                    $('#divDescripcion2').css('display', 'none');
+                    $('#divDescripcion3').css('display', 'none');
+                }
+                if (imagen == 2) {
+                    $('#divDescripcion2').css('display', 'inline-block');
+                    $('#divDescripcion1').css('display', 'none');
+                    $('#divDescripcion3').css('display', 'none');
+                }
+                if (imagen == 3) {
+                    $('#divDescripcion3').css('display', 'inline-block');
+                    $('#divDescripcion1').css('display', 'none');
+                    $('#divDescripcion2').css('display', 'none');
+                }
+                $('#divImagen1').css('display', 'none');
+                $('#divImagen2').css('display', 'none');
+                $('#divImagen3').css('display', 'none');
+                $('#divPrecio1').css('display', 'none');
+                $('#divPrecio2').css('display', 'none');
+                $('#divPrecio3').css('display', 'none');
+            });
+            $('#botonPrecio').click(function () {
+                varInfo = 3;
+                if (imagen == 1) {
+                    $('#divPrecio1').css('display', 'inline-block');
+                    $('#divPrecio2').css('display', 'none');
+                    $('#divPrecio3').css('display', 'none');
+                }
+                if (imagen == 2) {
+                    $('#divPrecio2').css('display', 'inline-block');
+                    $('#divPrecio1').css('display', 'none');
+                    $('#divPrecio3').css('display', 'none');
+                }
+                if (imagen == 3) {
+                    $('#divPrecio3').css('display', 'inline-block');
+                    $('#divPrecio1').css('display', 'none');
+                    $('#divPrecio2').css('display', 'none');
+                }
+                $('#divImagen1').css('display', 'none');
+                $('#divImagen2').css('display', 'none');
+                $('#divImagen3').css('display', 'none');
+                $('#divDescripcion1').css('display', 'none');
+                $('#divDescripcion2').css('display', 'none');
+                $('#divDescripcion3').css('display', 'none');
+            });
+            $("#cantidadMixto").keyup(function () {
+                cantidad = $("#cantidadMixto").val();
+                costeTotal = costeMixto * cantidad;
+                $("#resultadoMixto").text(costeTotal.toFixed(2));
+                costeTotal = costeAvellana * cantidad;
+                $("#resultadoAvellana").text(costeTotal.toFixed(2));
+                costeTotal = costePistacho * cantidad;
+                $("#resultadoPistacho").text(costeTotal.toFixed(2));
+                $("#cantidadPistacho").val(cantidad);
+                $("#cantidadAvellana").val(cantidad);
+                $("#cantidadMixto").val(cantidad);
+            });
+            $("#cantidadAvellana").keyup(function () {
+                cantidad = $("#cantidadAvellana").val();
+                costeTotal = costeMixto * cantidad;
+                $("#resultadoMixto").text(costeTotal.toFixed(2));
+                costeTotal = costeAvellana * cantidad;
+                $("#resultadoAvellana").text(costeTotal.toFixed(2));
+                costeTotal = costePistacho * cantidad;
+                $("#resultadoPistacho").text(costeTotal.toFixed(2));
+                $("#cantidadPistacho").val(cantidad);
+                $("#cantidadAvellana").val(cantidad);
+                $("#cantidadMixto").val(cantidad);
+            });
+            $("#cantidadPistacho").keyup(function () {
+                cantidad = $("#cantidadPistacho").val();
+                costeTotal = costeMixto * cantidad;
+                $('#resultadoMixto').text(costeTotal.toFixed(2));
+                costeTotal = costeAvellana * cantidad;
+                $('#resultadoAvellana').text(costeTotal.toFixed(2));
+                costeTotal = costePistacho * cantidad;
+                $("#resultadoPistacho").text(costeTotal.toFixed(2));
+                $("#cantidadPistacho").val(cantidad);
+                $("#cantidadAvellana").val(cantidad);
+                $("#cantidadMixto").val(cantidad);
+            });
+            $('#comprarMixto').click(function () {
+                var float = parseFloat($("#cantidadMixto").val())
+                if (float > 0) {
+                    kgMixto = kgMixto + float;
+                    var costeKgCompradosMixto = kgMixto * costeMixto;
+                    $("#costeKgCompradosMixto").text(costeKgCompradosMixto.toFixed(2));
+                    $("#kgMixto").text(kgMixto.toFixed(2));
+                    $('#carritoMixto').css('display', 'inline-block');
+                    var costeTotal = kgPistacho * costePistacho + kgAvellana * costeAvellana + costeMixto * kgMixto;
+                    $("#costeTotal").text(costeTotal.toFixed(2));
+                    var kgTotal = kgPistacho + kgAvellana + kgMixto;
+                    $("#kgTotal").text(kgTotal.toFixed(2));
+                    $('#carritoTotal').css('display', 'inline-block');
+                    alert("Se ha añadido al carrito de la compra!");
+                } else {
+                    alert("La compra no cumple los criterios.");
+                }
+                
+            });
+            $('#comprarAvellana').click(function () {
+                var float = parseFloat($("#cantidadAvellana").val())
+                if (float > 0) {
+                    kgAvellana = kgAvellana + float;
+                    var costeKgCompradosAvellana = kgAvellana * costeAvellana;
+                    $("#costeKgCompradosAvellana").text(costeKgCompradosAvellana.toFixed(2));
+                    $("#kgAvellana").text(kgAvellana.toFixed(2));
+                    $('#carritoAvellana').css('display', 'inline-block');
+                    var costeTotal = kgPistacho * costePistacho + kgAvellana * costeAvellana + costeMixto * kgMixto;
+                    $("#costeTotal").text(costeTotal.toFixed(2));
+                    var kgTotal = kgPistacho + kgAvellana + kgMixto;
+                    $("#kgTotal").text(kgTotal.toFixed(2));
+                    $('#carritoTotal').css('display', 'inline-block');
+                    alert("Se ha añadido al carrito de la compra!");
+                } else {
+                    alert("La compra no cumple los criterios.");
+                }
+            });
+            $('#comprarPistacho').click(function () {
+                var float = parseFloat($("#cantidadPistacho").val())
+                if (float > 0) {
+                    kgPistacho = kgPistacho + float;
+                    var costeKgCompradosPistacho = kgPistacho * costePistacho;
+                    $("#costeKgCompradosPistacho").text(costeKgCompradosPistacho.toFixed(2));
+                    $("#kgPistacho").text(kgPistacho.toFixed(2));
+                    $('#carritoPistacho').css('display', 'inline-block');
+                    var costeTotal = kgPistacho * costePistacho + kgAvellana * costeAvellana + costeMixto * kgMixto;
+                    $("#costeTotal").text(costeTotal.toFixed(2));
+                    var kgTotal = kgPistacho + kgAvellana + kgMixto;
+                    $("#kgTotal").text(kgTotal.toFixed(2));
+                    $('#carritoTotal').css('display', 'inline-block');
+                    alert("Se ha añadido al carrito de la compra!");
+                } else {
+                    alert("La compra no cumple los criterios.");
+                }
+            });
+            $('#botonCarrito').click(function () {
+                var kgTotal = kgPistacho + kgAvellana + kgMixto;
+                if (kgTotal > 0) {
+                    $('#carritoEntero').css('display', 'inline-block');
+                    $('#botonCarrito').css('display', 'none');
+                } else {
+                    alert("No has comprado nada todavía.");
+                }
+            });
+        });
+    </script>
+
+    <title>Tienda de frutos secos, compren!</title>
+  </head>
+  <body>
+
+    <h1 class="text-center p-2"> Tienda de frutos secos de Ibai y David </h1>
+    <!-- El siguiente container es para las fotos que se tendrán para la elección-->
+    <div class="container-fluid">
+      <div class="row p-5">
+            <div class="col md-4 col-md-offset-0 img-box">
+              <div class="col">
+                <div class="row md-1 p-1"><h2>Pistachos</h2></div>
+                <div class="row md-1 p-1"><img src="pistachos.jpg" title="Pistachos" id="imagen1" style="cursor: url(carrito.png), url(cursor.cur), pointer;"></div>
+              </div>  
+            </div>
+            <div class="col md-4 col-md-offset-0 img-box">
+              <div class="col">
+                <div class="row md-1 p-1"><h2>Avellanas</h2></div>
+                <div class="row md-1 p-1"><img src="avellanas.jpg" title="Avellanas" id="imagen2" style="cursor: url(carrito.png), url(cursor.cur), pointer;"></div>
+              </div>  
+            </div>
+            <div class="col md-4 col-md-offset-0 img-box">
+                <div class="col">
+                    <div class="row md-1 p-1"><h2>Frutos secos mixtos</h2></div>
+                    <div class="row md-1 p-1"><img src="frutosMixtos.jpg" title="Frutos secos mixtos" id="imagen3" style="cursor: url(carrito.png), url(cursor.cur), pointer;"></div>
+                </div>  
+            </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row p-5">
+        <div class="col md-4 col-md-offset-0 text-center">
+          <button class="btn btn-sm btn-outline-secondary" type="button" id="botonImagen" style="display: none;">Imagen</button>
+        </div>
+        <div class="col md-4 col-md-offset-0 text-center">
+          <button class="btn btn-sm btn-outline-secondary" type="button" id="botonDescripcion" style="display: none;">Descripción</button>
+        </div>
+        <div class="col md-4 col-md-offset-0 text-center">
+          <button class="btn btn-sm btn-outline-secondary" type="button" id="botonPrecio" style="display: none;">Precio</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col md-12" id="divImagen1" style="display: none;">
+                <img src="divPistacho.jpg" title="Pistachos">
+                <img src="divPistacho2.jpg" title="Pistachos">
+            </div>
+            <div class="col md-12" id="divImagen2" style="display: none;">
+                <img src="divAvellana.jpg" title="Avellanas">
+                <img src="divAvellana2.jpg" title="Avellanas">
+            </div>
+            <div class="col md-12" id="divImagen3" style="display: none;">
+                <img src="divMixto.jpg" title="FrutosSecosMixtos">
+                <img src="divMixto2.jpg" title="FrutosSecosMixtos">
+            </div>
+
+            <div class="col md-4" id="divDescripcion1" style="display: none;">
+                <div class="row">
+                    <div class="col md-6 col-md-offset-0">
+                        <div class="title-box">
+                            <h2>Beneficios de los pistachos</h2>
+                        </div>
+                        <div><hr size="8px"></div>
+                        <div class="divider p-4">
+                            <h3>Beneficios para el corazón</h3>
+                            <br />
+                            <h4>Como bien sabemos, las personas con un nivel de colesterol, lípidos y lipopotreínas elevado tienen riesgo de sufrir problemas al corazón. El pistacho, por sus altos niveles de luteína, beta-caroteno y gamma-tocoferol (responsables de la vitamina A y E) respecto a otros frutos secos, aumenta el nivel de <strong>antioxidantes</strong> en sangre.                         
+                            <br><br>¿Por qué esto es importante? Porque los <strong>antioxidantes</strong> logran que gran parte del colesterol <strong>LDL</strong> -el llamado “malo”- se diluya. Con esto se evita que llegue a los vasos sanguíneos y cause una inflamación de los mismos.
+                            <br><br>Por otra parte, al ser ricos en vitamina <strong>B6</strong>, ayudan al cuerpo a generar más hemoglobina, la encargada principal de transportar el oxígeno a las células. De esta forma, personas que tengan cansancio, sueño o anemia pueden ayudar a sus síntomas con unos cuantos pistachos.
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="col md-6 col-md-offset-0">
+                        <div class="title-box">
+                            <h2>Pistachos ecológicos</h2>
+                        </div>
+                        <div><hr size="8px"></div>
+                        <div class="divider p-4">
+                            <h4>
+                            La <strong>agricultura ecológica, orgánica o biológica1</strong>​ es un sistema de cultivo de una explotación agrícola autónoma basada en la <strong>utilización óptima de los recursos naturales</strong>,
+                            <strong>sin emplear productos químicos sintético, u organismos genéticamente modificados</strong>(OGMs) —ni para abono ni para combatir las plagas—ni para cultivos,
+                            logrando de esta forma obtener alimentos orgánicos a la vez que  <strong>se conserva la fertilidad de la tierra y se respeta el medio ambiente. </strong>
+
+                            <br /><br />Todo ello de <strong>manera sostenible, equilibradas y mantenible.</strong>
+                            Los <strong>principales objetivos</strong> de la agricultura orgánica son la obtención de <strong>
+                                alimentos saludables,
+                                de mayor calidad nutritiva, sin la presencia de sustancias de síntesis química y obtenidos mediante procedimientos sostenibles.
+                            </strong> 
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col md-4" id="divDescripcion2" style="display: none;">
+                <div class="row">
+                    <div class="col md-6 col-md-offset-0">
+                        <div class="title-box">
+                            <h2>Beneficios de las avellanas</h2>
+                        </div>
+                        <div><hr size="8px"></div>
+                        <div class="divider p-4">
+                            <h4>
+                                <strong>VITAMINAS Y MINERALES</strong>
+
+                                <br /> <br />Las avellanas tienen una importante cantidad de micronutrientes, como la <strong>vitamina E, vitamina B</strong>, como la <strong>B1, B2 y B9, y vitamina A y C</strong>; también destacan minerales, como potasio, calcio y magnesio, fósforo y manganeso.
+
+                                <br /> <br /><strong>FLAVONOIDES</strong>
+
+                                <br /> <br />Contienen <strong>flavonoides</strong>, capaces de mejorar la circulación y favorecer la salud del cerebro; pueden proporcionar grandes beneficios para la salud, tan sólo con tomar un puñado en la merienda.
+
+                                <br /> <br /><strong>GRASAS SALUDABLES</strong>
+
+                                <br /> <br />Este fruto seco contiene <strong>grasas saludables</strong> que pueden ayudar a proteger la salud del corazón, porque son ricas en <strong>grasas poliinsaturadas y mononunsaturated saludables</strong> y bajos en <strong>grasas saturadas</strong> menos saludables.
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="col md-6 col-md-offset-0">
+                        <div class="title-box">
+                            <h2>Avellanas ecológicas</h2>
+                        </div>
+                        <div><hr size="8px"></div>
+                        <div class="divider p-4">
+                            <h4>
+                            La <strong>agricultura ecológica, orgánica o biológica1</strong>​ es un sistema de cultivo de una explotación agrícola autónoma basada en la <strong>utilización óptima de los recursos naturales</strong>,
+                            <strong>sin emplear productos químicos sintético, u organismos genéticamente modificados</strong>(OGMs) —ni para abono ni para combatir las plagas—ni para cultivos,
+                            logrando de esta forma obtener alimentos orgánicos a la vez que  <strong>se conserva la fertilidad de la tierra y se respeta el medio ambiente. </strong>
+
+                            <br /><br />Todo ello de <strong>manera sostenible, equilibradas y mantenible.</strong>
+                            Los <strong>principales objetivos</strong> de la agricultura orgánica son la obtención de <strong>
+                                alimentos saludables,
+                                de mayor calidad nutritiva, sin la presencia de sustancias de síntesis química y obtenidos mediante procedimientos sostenibles.
+                            </strong> 
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col md-4" id="divDescripcion3" style="display: none;">
+                <div class="row">
+                    <div class="col md-6 col-md-offset-0">
+                        <div class="title-box">
+                            <h2>Beneficios de los frutos secos</h2>
+                        </div>
+                        <div><hr size="8px"></div>
+                        <div class="divider p-4">
+                            
+                            <h3>En la variedad está el tener una mayor cantidad de vitaminas y beneficios</h3>
+                            <h4>
+                                <br />
+                                <li><strong>Son fuente de minerales.</strong> Aportan magnesio, fósforo, potasio, calcio, hierro y oligoelementos como el zinc y el selenio, con propiedades antioxidantes.</li>
+                                <li><strong>Es importante su gran aporte vitamínico.</strong> Son ricos en vitaminas como B1, B3 o folatos.También constituyen una de las fuentes vegetales más abundantes en vitamina E, también con carácter antioxidante.</li>
+                                <li><strong>Son ricos en grasas saludables.</strong> A los frutos secos se les atribuyen propiedades cardiosaludables por tener un alto contenido en grasas mono- y poliinsaturadas, destacamos el ácido oleico, el linoleico (omega 6) y linolénico (omega 3). Estos últimos son ácidos grasos esenciales para el organismo.</li>
+                                <li><strong>Aportan proteína vegetal.</strong> Hace que los frutos secos sean alimentos idóneos, en cantidades moderadas, para tomar después de la realización de ejercicio físico.</li>
+                                <li><strong>Son ricos en fibra.</strong> Su consumo ayuda a controlar el apetito y a regular el tránsito intestinal. También se asocia a una disminución de los niveles de colesterol al interferir en su absorción a nivel intestinal.</li>
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="col md-6 col-md-offset-0">
+                        <div class="title-box">
+                            <h2>Frutos secos ecológicos</h2>
+                        </div>
+                        <div><hr size="8px"></div>
+                        <div class="divider p-4">
+                            <h4>
+                                La <strong>agricultura ecológica, orgánica o biológica1</strong>​ es un sistema de cultivo de una explotación agrícola autónoma basada en la <strong>utilización óptima de los recursos naturales</strong>, 
+                                <strong>sin emplear productos químicos sintético, u organismos genéticamente modificados</strong>(OGMs) —ni para abono ni para combatir las plagas—ni para cultivos, 
+                                logrando de esta forma obtener alimentos orgánicos a la vez que  <strong>se conserva la fertilidad de la tierra y se respeta el medio ambiente. </strong>
+                                
+                                <br /><br />Todo ello de <strong>manera sostenible, equilibradas y mantenible.</strong>
+                                Los <strong>principales objetivos</strong> de la agricultura orgánica son la obtención de <strong> alimentos saludables,      
+                                de mayor calidad nutritiva, sin la presencia de sustancias de síntesis química y obtenidos mediante procedimientos sostenibles.</strong> 
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col md-12 text-center p-5" id="divPrecio1" style="display: none;">
+               <h2>El precio de los pistachos es de 2.59 €/Kg</h2>
+                <hr size="8px">
+                <h4>Rellene el formulario</h4>
+                <div class="p-3">
+                    <span class="form-control" style=" border: 0;"><input name="cantidadPistacho" style="text-align: right;" id="cantidadPistacho" type="text" value="1" class="cantidadPistacho" data-price="2.59">Kg</span>
+                </div>
+                <div class="p-3">
+                    <span class="form-control" style=" border: 0;"><span name="resultadoPistacho" id="resultadoPistacho" class="resultadoPistacho" value="2.59">2.59</span>€</span>
+                </div>
+                <div class="p-3">
+                    <button class="btn btn-sm btn-outline-secondary" type="button" id="comprarPistacho">COMPRAR</button>
+                </div>
+            </div>
+            <div class="col md-12 text-center p-5" id="divPrecio2" style="display: none;">
+                <h2>El precio de las avellanas es de 1.49 €/Kg</h2>
+                <hr size="8px">
+                <h4>Rellene el formulario</h4>
+                <div class="p-3">
+                    <span class="form-control" style=" border: 0;"><input name="cantidadAvellana" style="text-align: right;" id="cantidadAvellana" type="text" value="1" class="cantidadAvellana" data-price="1.49">Kg</span>
+                </div>
+                <div class="p-3">
+                    <span class="form-control" style=" border: 0;"><span name="resultadoAvellana" id="resultadoAvellana" class="resultadoAvellana" value="1.49">1.49</span>€</span>
+                </div>
+                <div class="p-3">
+                    <button class="btn btn-sm btn-outline-secondary" type="button" id="comprarAvellana">COMPRAR</button>
+                </div>
+            </div>
+            <div class="col md-12 text-center p-5" id="divPrecio3" data-precioMixto="0.89" style="display: none;">
+                <h2>El precio de los frutos secos mixtos es de 0.89 €/Kg</h2>
+                <hr size="8px">
+                <h4>Rellene el formulario</h4>
+                <div class="p-3">
+                    <span class="form-control" style=" border: 0;"><input name="cantidadMixto" style="text-align: right;" id="cantidadMixto" type="text" value="1" class="cantidadMixto" data-price="0.89">Kg</span>
+                </div>
+                <div class="p-3">
+                    <span class="form-control" style=" border: 0;"><span name="resultadoMixto" id="resultadoMixto" class="resultadoMixto" value="0.89">0.89</span>€</span>
+                </div>
+                <div class="p-3">
+                    <button class="btn btn-sm btn-outline-secondary" type="button" id="comprarMixto">COMPRAR</button>
+                </div>
+        </div>
+
+        <div class="container p-1" id="carritoEntero" style="display: none; border-radius:5px; background-color:white; position: fixed; top: 10px; right: 10px; width:300px; border:2px solid black;">
+            <span class="form-control" id="carritoPistacho" style=" border: 0; display:none; text-align:right;">
+                <span name="kgPistacho" id="kgPistacho" class="kgPistacho"></span> Kg de pistachos, <span name="costeKgCompradosPistacho" id="costeKgCompradosPistacho" class="costeKgCompradosPistacho">
+                </span>€
+            </span>
+            <span class="form-control" id="carritoAvellana" style=" border: 0; display:none;text-align:right;">
+                <span name="kgAvellana" id="kgAvellana" class="kgAvellana"></span> Kg de avellanas, <span name="costeKgCompradosAvellana" id="costeKgCompradosAvellana" class="costeKgCompradosAvellana">
+                </span>€
+            </span>
+            <span class="form-control" id="carritoMixto" style=" border: 0; display:none; text-align:right;">
+                <span name="kgMixto" id="kgMixto" class="kgMixto"></span> Kg mixtos, <span name="costeKgCompradosMixto" id="costeKgCompradosMixto" class="costeKgCompradosMixto">
+                </span>€
+            </span>
+            <hr size="8px">
+            <span class="form-control" id="carritoTotal" style=" border: 0; display:none;text-align:right;">
+                <span name="kgTotal" id="kgTotal" class="kgTotal"></span> Kg totales, <span name="costeTotal" id="costeTotal" class="costeTotal">
+                </span>€
+            </span>
+            <button class="btn btn-sm btn-outline-secondary" type="button" id="botonTramitePedido" style="position:relative;left:75px;">Tramitar pedido</button>
+         </div>
+         <div class="container" style="position:fixed; top:10px; right:75px; width:50px;">
+             <img src="carritoCompra.jpg" title="botonCarrito" id="botonCarrito">
+         </div>
+    </div>
+       
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+   </body>
+</html>
